@@ -21,4 +21,8 @@ export class PostListComponent implements OnInit {
   getAllPosts(): void {
     this.postService.getPosts().subscribe(response => this.posts = response);
   }
+  deletePost(id: number){
+    this.postService.deletePost(id);
+//     this.ngOnInit();
+  }
 }

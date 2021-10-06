@@ -28,12 +28,13 @@ export class PostService {
     return this.http.get<Post[]>('http://localhost:8080/posts');
     return of(this.posts);
   }
-/** POST: add a new hero to the database */
-addPost(post: Post): void {
-  this.http.post<any>('http://localhost:8080/post', post).subscribe(data => {
-        post.id = data.id;
-    })
-}
-
+    addPost(post: Post): void {
+      this.http.post<any>('http://localhost:8080/post', post).subscribe(data => {
+            post.id = data.id;
+        })
+    }
+    deletePost(id: number){
+     this.http.delete('http://localhost:8080/post/'+id).subscribe(status => console.log(status));
+    }
 
 }

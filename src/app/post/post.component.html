@@ -1,1 +1,4 @@
+<label>Title:</label><input [(ngModel)]="title"/>
+<label>Text:</label><input [(ngModel)]="text"/>
 <button (click)="addPost()">Add new post</button>
+<button [routerLink]="['/posts']">Back to the list</button>

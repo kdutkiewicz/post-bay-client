@@ -7,11 +7,16 @@ import {PostService} from '../service/post.service';
 })
 export class PostComponent implements OnInit {
 
+ text: string;
+ title: string;
+
   constructor(private postService: PostService) {
   }
   ngOnInit(): void {
+  this.title='';
+  this.text='';
   }
   addPost(){
-    this.postService.addPost({id: 0, title:'Tytul 3', text: 'oisjfpoidjsifj pjfdspjf fmieon ofij'});
+    this.postService.addPost({id: 0, title:this.title, text: this.text});
   }
 }

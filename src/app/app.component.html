@@ -1,4 +1,5 @@
 <h1>{{title}}</h1>
-<div style="hight:100%"><app-post-list></app-post-list></div>
+<button [routerLink]="['/posts']">List</button>
+<button [routerLink]="['/post']">Add new</button>
+<router-outlet></router-outlet>
 
-<app-post></app-post>
