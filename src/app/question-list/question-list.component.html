@@ -1,0 +1,7 @@
+<div class="post-box" *ngFor="let q of questions"
+     [routerLink]="['/question', question.id]">
+
+  <h3>{{question.title}}</h3>
+  <p>{{question.text}}</p>
+  <button (click)="deleteQuestion(post.id)">Delete</button>
+</div>

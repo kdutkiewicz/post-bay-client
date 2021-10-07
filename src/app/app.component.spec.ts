@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'post-bay-client'`, () => {
+  it(`should have as title 'questions-bay-client'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('post-bay-client');
+    expect(app.title).toEqual('questions-bay-client');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('post-bay-client app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('questions-bay-client app is running!');
   });
 });

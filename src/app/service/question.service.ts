@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Post} from '../model/post';
+import {Question} from '../model/question';
 import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
@@ -14,22 +14,22 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class QuestionService {
 
   constructor(private http: HttpClient) { }
 
-  getPosts(): Observable<Post[]>{
-    return this.http.get<Post[]>('http://localhost:8080/posts');
+  getQuestions(): Observable<Question[]>{
+    return this.http.get<Question[]>('http://localhost:8080/posts');
   }
-  getPost(id:number): Observable<Post>{
-    return this.http.get<Post>('http://localhost:8080/post/'+id);
+  getQuestion(id:number): Observable<Question>{
+    return this.http.get<Question>('http://localhost:8080/post/'+id);
   }
-    addPost(post: Post): void {
-      this.http.post<any>('http://localhost:8080/post', post).subscribe(data => {
-            post.id = data.id;
+    addQuestion(question: Question): void {
+      this.http.post<any>('http://localhost:8080/post', question).subscribe(data => {
+            question.id = question.id;
         })
     }
-    deletePost(id: number){
+    deleteQuestion(id: number){
      this.http.delete('http://localhost:8080/post/'+id).subscribe(status => console.log(status));
     }
 
