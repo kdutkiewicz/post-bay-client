@@ -16,17 +16,13 @@ const httpOptions = {
 })
 export class PostService {
 
-  posts: Post[] = [
-    {id: 1, title: 'Tytul 1', text: 'tresc posta'},
-    {id: 2, title: 'Tytul 2', text: 'tresc nastepnego posta'},
-    {id: 3, title: 'Tytul 3', text: 'oisjfpoidjsifj pjfdspjf fmieon ofij'}
-  ];
-
   constructor(private http: HttpClient) { }
 
   getPosts(): Observable<Post[]>{
     return this.http.get<Post[]>('http://localhost:8080/posts');
-    return of(this.posts);
+  }
+  getPost(id:number): Observable<Post>{
+    return this.http.get<Post>('http://localhost:8080/post/'+id);
   }
     addPost(post: Post): void {
       this.http.post<any>('http://localhost:8080/post', post).subscribe(data => {
