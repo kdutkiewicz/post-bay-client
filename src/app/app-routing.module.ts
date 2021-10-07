@@ -5,7 +5,7 @@ import { QuestionComponent } from './question/question.component';
  const routes: Routes = [
    { path: 'questions', component: QuestionListComponent },
    { path: 'question/:id', component: QuestionComponent},
-   { path: 'post', component: QuestionComponent}
+   { path: 'question', component: QuestionComponent}
  ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
